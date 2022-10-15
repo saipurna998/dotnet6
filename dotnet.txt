@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('vcs'){
+            steps {
+                git url 'https://github.com/saipurna998/dotnet6.git'
+            }
+        }
+        stage('build') {
+            steps{
+                sh 'dotnet6'
+            }
+        }
+    }
+}
